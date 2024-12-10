@@ -89,7 +89,7 @@ class EGLEvn {
         }
         // If surface is null
         // Force off screen mode
-        mEglSurface = if (surface == null) {
+        mEglSurface = if (surface == null || !surface.isValid) {
             val attributes  = intArrayOf(
                 EGL14.EGL_WIDTH, surfaceWidth,
                 EGL14.EGL_HEIGHT, surfaceHeight,
